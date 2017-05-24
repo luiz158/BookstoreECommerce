@@ -29,7 +29,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	}
 
 	private static final String[] PUBLIC_MATCHERS = { "/css/**", "/js/**", "/image/**", "/", "/myAccount", "/newUser",
-			"/forgetPassword" };
+			"/forgetPassword", "/login", "/fonts/**" };
 
 	@Override
 	public void configure(HttpSecurity http) throws Exception {
@@ -37,7 +37,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 				// .antMatchers("/**");
 				.antMatchers(PUBLIC_MATCHERS).permitAll().anyRequest().authenticated();
 
-		http.csrf().disable().cors().disable().formLogin().failureUrl("/login?error").defaultSuccessUrl("/")
+		http.csrf().disable().cors().disable().formLogin().failureUrl("/login?error")
+				// .defaultSuccessUrl("/")
 				.loginPage("/login").permitAll().and().logout()
 				.logoutRequestMatcher(new AntPathRequestMatcher("/logout")).logoutSuccessUrl("/?logout")
 				.deleteCookies("remember-me").permitAll().and().rememberMe();
