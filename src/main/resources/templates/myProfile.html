@@ -55,7 +55,7 @@
 						<div class="panel-group">
 							<div class="panel panel-default" style="border: none;">
 								<div class="panel-body" style="background-color: #ededed; margin-top: 20px;">
-									<form th:action="@{/updateUserInfo}" method="post">
+									<form th:action="@{/updateUserInfo}" method="post" th:object="${user}">
 										<input type="hidden" name="id" th:value="${user.id}" />
 
 										<div class="bg-info" th:if="${updateUserInfo}">User info updated</div>
@@ -81,8 +81,8 @@
 										<!-- ##### Username ##### -->
 
 										<div class="form-group">
-											<label for="userName">Username</label> <input type="text" class="form-control" id="userName" name="userName"
-												th:value="${user.userName}" placeholder="Username" />
+											<label for="userName">Username</label> <input type="text" class="form-control" id="userName" name="username"
+												th:value="${user.username}" placeholder="Username" />
 										</div>
 
 										<!-- ##### Current Password ##### -->

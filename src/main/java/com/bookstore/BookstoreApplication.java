@@ -26,21 +26,25 @@ public class BookstoreApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		User user1 = new User();
-		user1.setFirstName("Ariel");
-		user1.setLastName("Nunes");
-		user1.setUsername("ArielSNunes");
-		user1.setPassword(SecurityUtility.passwordEncoder().encode("ariel"));
-		user1.setEmail("arielsn1@outlook.com");
+		try {
+			User user1 = new User();
+			user1.setFirstName("Ariel");
+			user1.setLastName("Nunes");
+			user1.setUsername("ArielSNunes");
+			user1.setPassword(SecurityUtility.passwordEncoder().encode("ariel"));
+			user1.setEmail("arielsn1@outlook.com");
 
-		Set<UserRole> userRoles = new HashSet<>();
+			Set<UserRole> userRoles = new HashSet<>();
 
-		Role role1 = new Role();
-		role1.setRoleId(1);
-		role1.setName("ROLE_USER");
-		userRoles.add(new UserRole(user1, role1));
+			Role role1 = new Role();
+			role1.setRoleId(1);
+			role1.setName("ROLE_USER");
+			userRoles.add(new UserRole(user1, role1));
 
-		userService.createUser(user1, userRoles);
+			userService.createUser(user1, userRoles);
+		} catch (Exception e) {
+			System.out.println("User already exists.");
+		}
 	}
 
 }

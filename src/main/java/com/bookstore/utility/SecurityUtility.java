@@ -9,8 +9,8 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class SecurityUtility {
-	// Salt should be protected carefully
 	private static final String SALT = "salt";
+	// Salt should be protected carefully
 
 	@Bean
 	public static BCryptPasswordEncoder passwordEncoder() {
@@ -18,14 +18,14 @@ public class SecurityUtility {
 	}
 
 	@Bean
-	public static String randomPasswordGenerator() {
-		String SALTCHAR = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
+	public static String randomPassword() {
+		String SALTCHARS = "ABCEFGHIJKLMNOPQRSTUVWXYZ1234567890";
 		StringBuilder salt = new StringBuilder();
-		Random random = new Random();
+		Random rnd = new Random();
 
 		while (salt.length() < 18) {
-			int index = (int) (random.nextFloat() * SALTCHAR.length());
-			salt.append(SALTCHAR).charAt(index);
+			int index = (int) (rnd.nextFloat() * SALTCHARS.length());
+			salt.append(SALTCHARS.charAt(index));
 		}
 		String saltStr = salt.toString();
 		return saltStr;
