@@ -29,17 +29,29 @@
 
 				<!-- Nav Tabs -->
 				<ul class="nav nav-tabs">
-					<li th:classappend="${classActiveEdit}?'active'"><a href=" #tab-1" data-toggle="tab"><span
-							style="color: red;">Edit</span> </a></li>
+					<li th:classappend="${classActiveEdit}?'active'">
+						<a href=" #tab-1" data-toggle="tab">
+							<span style="color: red;">Edit</span>
+						</a>
+					</li>
 
-					<li th:classappend="${classActiveOrders}? 'active' "><a href="#tab-2" data-toggle="tab"><span
-							style="color: red;">Orders</span></a></li>
+					<li th:classappend="${classActiveOrders}? 'active' ">
+						<a href="#tab-2" data-toggle="tab">
+							<span style="color: red;">Orders</span>
+						</a>
+					</li>
 
-					<li th:classappend="${classActiveBilling}? 'active'"><a href=" #tab-3" data-toggle="tab"><span
-							style="color: red;">Billing</span></a></li>
+					<li th:classappend="${classActiveBilling}? 'active'">
+						<a href=" #tab-3" data-toggle="tab">
+							<span style="color: red;">Billing</span>
+						</a>
+					</li>
 
-					<li th:classappend="${classActiveShipping}? 'active'"><a href=" #tab-4" data-toggle="tab"><span
-							style="color: red;">Shipping</span></a></li>
+					<li th:classappend="${classActiveShipping}? 'active'">
+						<a href=" #tab-4" data-toggle="tab">
+							<span style="color: red;">Shipping</span>
+						</a>
+					</li>
 				</ul>
 
 				<!-- ################################################################################################################################################# -->
@@ -66,13 +78,15 @@
 										<div class="form-group">
 											<div class="row">
 												<div class="col-xs-6">
-													<label for="firstName">First Name</label> <input type="text" class="form-control" id="firstName"
-														name="firstName" th:value="${user.firstName}" placeholder="First Name" />
+													<label for="firstName">First Name</label>
+													<input type="text" class="form-control" id="firstName" name="firstName" th:value="${user.firstName}"
+														placeholder="First Name" />
 												</div>
 
 												<div class="col-xs-6">
-													<label for="lastName">Last Name</label> <input type="text" class="form-control" id="lastName"
-														name="lastName" th:value="${user.lastName}" placeholder="Last Name" />
+													<label for="lastName">Last Name</label>
+													<input type="text" class="form-control" id="lastName" name="lastName" th:value="${user.lastName}"
+														placeholder="Last Name" />
 												</div>
 											</div>
 										</div>
@@ -81,16 +95,18 @@
 										<!-- ##### Username ##### -->
 
 										<div class="form-group">
-											<label for="userName">Username</label> <input type="text" class="form-control" id="userName" name="username"
-												th:value="${user.username}" placeholder="Username" />
+											<label for="userName">Username</label>
+											<input type="text" class="form-control" id="userName" name="username" th:value="${user.username}"
+												placeholder="Username" />
 										</div>
 
 										<!-- ##### Current Password ##### -->
 										<!-- ##### Current Password ##### -->
 
 										<div class="form-group">
-											<label for="currentPassword">Current Password</label> <input type="text" class="form-control"
-												id="currentPassword" name="currentPassword" th:value="${currentPassword}" />
+											<label for="currentPassword">Current Password</label>
+											<input type="text" class="form-control" id="currentPassword" name="currentPassword"
+												th:value="${currentPassword}" />
 											<p style="color: #828282;">Enter your current password to change the email address or password.</p>
 										</div>
 
@@ -98,8 +114,9 @@
 										<!-- ##### Email ##### -->
 
 										<div class="form-group">
-											<label for="email">* Email Address</label> <input type="text" class="form-control" id="email" name="email"
-												th:value="${user.email}" placeholder="Email Address" />
+											<label for="email">* Email Address</label>
+											<input type="text" class="form-control" id="email" name="email" th:value="${user.email}"
+												placeholder="Email Address" />
 											<p style="color: #828282">A valid email address. All emails from the system will be sent to this address.
 												The email address is not made public and will only be used if you wish to receive a new password or wish to
 												receive certain notification.</p>
@@ -109,16 +126,16 @@
 										<!-- ##### New Password ##### -->
 
 										<div class="form-group">
-											<label for="txtNewPassword">New Password</label> <input type="text" class="form-control" id="txtNewPassword"
-												name="txtNewPassword" />
+											<label for="txtNewPassword">New Password</label>
+											<input type="text" class="form-control" id="txtNewPassword" name="txtNewPassword" />
 										</div>
 
 										<!-- ##### New Password Confirmation ##### -->
 										<!-- ##### New Password Confirmation ##### -->
 
 										<div class="form-group">
-											<label for="txtConfirmPassword">New Password</label> <input type="text" class="form-control"
-												id="txtConfirmPassword" name="txtConfirmPassword" />
+											<label for="txtConfirmPassword">New Password</label>
+											<input type="text" class="form-control" id="txtConfirmPassword" name="txtConfirmPassword" />
 											<p style="color: #828282">To change current password, enter the new password in both fields.</p>
 										</div>
 										<button type="submit" class="btn btn-primary">Create new account</button>
@@ -138,13 +155,14 @@
 								<div class="panel-body" style="background-color: #ededed; margin-top: 20px;">
 									<form>
 										<div class="form-group">
-											<label for="newUsername">* Username: </label> <input required="required" type="text" class="form-control"
-												id="newUsername" name="username" placeholder="Enter your username here." />
+											<label for="newUsername">* Username: </label>
+											<input required="required" type="text" class="form-control" id="newUsername" name="username"
+												placeholder="Enter your username here." />
 										</div>
 
 										<div class="form-group">
-											<label for="password">* Password: </label> <input required="required" type="password" class="form-control"
-												id="password" name="password" />
+											<label for="password">* Password: </label>
+											<input required="required" type="password" class="form-control" id="password" name="password" />
 											<p style="color: #828282">Enter the password that accompanies your username</p>
 										</div>
 
@@ -165,8 +183,8 @@
 								<div class="panel-body" style="background-color: #ededed; margin-top: 20px;">
 									<form>
 										<div class="form-group">
-											<label for="recoverEmail">* Your Email: </label> <input required="required" type="email" class="form-control"
-												id="recoverEmail" name="email" />
+											<label for="recoverEmail">* Your Email: </label>
+											<input required="required" type="email" class="form-control" id="recoverEmail" name="email" />
 											<p style="color: #828282">Enter your registered email address here.</p>
 										</div>
 
