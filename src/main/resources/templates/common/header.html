@@ -7,14 +7,28 @@
 <title>Le's Bookstore</title>
 
 <!-- Bootstrap core CSS -->
-<link href="/css/bootstrap.min.css" rel="stylesheet" />
+<link th:href="@{/css/bootstrap.min.css}" rel="stylesheet" />
 
 
 <!-- Custom styles for this template -->
-<link href="/css/styles.css" rel="stylesheet" />
-<link href="/css/non-responsive.css" rel="stylesheet" />
+<link th:href="@{/css/styles.css}" rel="stylesheet" />
+<link th:href="@{/css/non-responsive.css}" rel="stylesheet" />
 
-<link rel="icon" href="/image/apple-touch-icon.png" />
+<link th:rel="icon" href="@{/image/apple-touch-icon.png}" />
+<!-- Data Table Content -->
+<link rel="stylesheet" th:href="@{/css/jquery.dataTables.min.css}" />
+<link rel="stylesheet" th:href="@{/css/dataTables.bootstrap.min.css}" />
+<link rel="stylesheet" th:href="@{/css/dataTables.jqueryui.min.css}" />
+<link th:href="@{/css/font-awesome.min.css}" rel="stylesheet" />
+
+
+<!-- Text Editor HTML -->
+<script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
+<script>
+	tinymce.init({
+		selector : 'textarea'
+	});
+</script>
 </head>
 
 <body>
@@ -85,12 +99,15 @@
 
 	<!-- Fragmento dos Scripts -->
 	<div th:fragment="body-bottom-scripts">
-		<!-- Bootstrap core JavaScript
-    ================================================== -->
-		<!-- Placed at the end of the document so the pages load faster -->
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 
-		<script src="/js/bootstrap.min.js"></script>
+
+		<!-- Placed at the end of the document so the pages load faster -->
+		<script th:src="@{/js/jquery.min.js}"></script>
+		<script th:src="@{/js/bootstrap.min.js}"></script>
+
+		<!-- Data Tables -->
+		<script th:src="@{/js/jquery.dataTables.min.js}"></script>
+		<script th:src="@{/js/dataTables.bootstrap.min.js}"></script>
 	</div>
 
 	<!-- ################################################################################################################################################# -->
